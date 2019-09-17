@@ -69,10 +69,10 @@ class Property
     found_property_by_id = db.exec_prepared('property_by_id', values)
     db.close
     return Property.new(found_property_by_id[0])
-    
+
   end
 
-  def find_by_address(property_by_address
+  def find_by_address(property_by_address)
 
     db = PG.connect({dbname: 'properties', host: 'localhost'})
     sql = "SELECT * FROM properties
